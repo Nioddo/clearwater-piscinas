@@ -1,0 +1,48 @@
+[
+  {
+    "file": "assets/img/textura-agua-turquesa.jpg",
+    "media": "image",
+    "ref": "commons:62859130",
+    "title": "Water Ripples",
+    "creator": "Drakonfly",
+    "creatorUrl": null,
+    "date": "2016-06-18",
+    "license": "CC BY-SA 4.0",
+    "licenseCode": "by-sa",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "creditRequired": true,
+    "page": "https://commons.wikimedia.org/wiki/File:Water_Ripples.jpg",
+    "via": "Wikimedia Commons",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Water_Ripples.jpg/1920px-Water_Ripples.jpg",
+    "width": 1920,
+    "height": 1440,
+    "bytes": 221711,
+    "credit": "\"Water Ripples\" by Drakonfly, CC BY-SA 4.0, via Wikimedia Commons",
+    "notes": [
+      "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
+    ],
+    "saved": "2026-10-16T00:07:33.566Z"
+  },
+  {
+    "file": "assets/img/textura-agua-profunda.jpg",
+    "media": "image",
+    "ref": "commons:91962863",
+    "title": "Caustic light - Flickr - fdecomite",
+    "creator": "fdecomite",
+    "creatorUrl": null,
+    "date": "Taken on 18 July 2005, 15:17",
+    "license": "CC BY 2.0",
+    "licenseCode": "by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "creditRequired": true,
+    "page": "https://commons.wikimedia.org/wiki/File:Caustic_light_-_Flickr_-_fdecomite.jpg",
+    "via": "Wikimedia Commons",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Caustic_light_-_Flickr_-_fdecomite.jpg/1920px-Caustic_light_-_Flickr_-_fdecomite.jpg",
+    "width": 1920,
+    "height": 1436,
+    "bytes": 210478,
+    "credit": "\"Caustic light - Flickr - fdecomite\" by fdecomite, CC BY 2.0, via Wikimedia Commons",
+    "notes": [],
+    "saved": "2026-10-16T00:07:34.694Z"
+  }
+]

@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ClearWater Piscinas · Limpieza y mantenimiento de piletas en Bahía Blanca</title>
+  <meta name="description" content="Limpieza, recuperación y mantenimiento de piletas en Bahía Blanca y la zona. Primera visita sin cargo. Pedila por WhatsApp.">
+  <meta name="theme-color" content="#FDF8F2">
+  <meta name="color-scheme" content="light">
+  <meta property="og:title" content="ClearWater Piscinas · Tu pileta lista para disfrutar">
+  <meta property="og:description" content="Limpieza, recuperación y mantenimiento de piletas en Bahía Blanca. Pedí tu visita por WhatsApp.">
+  <meta property="og:image" content="assets/img/hero-escalera.jpg">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preload" as="image" href="assets/img/hero-escalera.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.39 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2.7c3.6 4.2 6 7.6 6 10.8a6 6 0 0 1-12 0c0-3.2 2.4-6.6 6-10.8Z"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M8 2.5v4M16 2.5v4M3 10h18"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5.5-8 12-8 12s-8-6.5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></g></symbol>
+  </svg>
+
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="bar" id="arriba">
+    <a class="bar__brand" href="#arriba" aria-label="ClearWater Piscinas, volver al inicio">
+      <img src="assets/img/logo-clearwater.png" width="440" height="279" alt="">
+    </a>
+    <nav class="bar__nav" aria-label="Secciones">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#zonas">Zonas</a>
+    </nav>
+    <a class="btn btn--primary btn--small" href="#pedir"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Pedir visita</a>
+  </header>
+
+  <main id="contenido">
+
+    <!-- Portada -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <h1 class="hero__title" id="hero-title" data-rise style="--i:0">Tu pileta lista<br>para disfrutar</h1>
+        <p class="hero__lead" data-rise style="--i:1">Limpiamos, recuperamos y mantenemos piletas en Bahía Blanca y la zona. Vos disfrutá, nosotros hacemos el resto.</p>
+        <div class="hero__actions" data-rise style="--i:2">
+          <a class="btn btn--primary btn--big" href="#pedir"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Pedir visita por WhatsApp</a>
+          <a class="btn btn--ghost btn--big" href="#trabajos">Ver trabajos</a>
+        </div>
+        <ul class="hero__facts" role="list" data-rise style="--i:3">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Piletas verdes</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Mantenimiento mensual</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Todo el año</li>
+        </ul>
+      </div>
+      <div class="hero__art">
+        <div class="hero__back" aria-hidden="true"></div>
+        <figure class="hero__photo pool" data-shutter>
+          <img src="assets/img/hero-escalera.jpg" width="1304" height="2318" alt="Escalera de una pileta con el agua cristalina y los reflejos del sol en el fondo" fetchpriority="high">
+        </figure>
+        <p class="badge" aria-hidden="true"><span>Primera visita</span><strong>sin cargo</strong></p>
+      </div>
+    </section>
+
+    <!-- Quiénes somos -->
+    <section class="about" id="nosotros" aria-labelledby="about-title">
+      <div class="mosaic" aria-hidden="true"></div>
+      <div class="about__inner">
+        <figure class="about__photo pool" data-reveal="photo">
+          <img src="assets/img/trabajo-sep26-proceso.jpg" width="720" height="960" alt="Integrante de ClearWater aspirando el fondo de una pileta mientras el agua se aclara" loading="lazy">
+        </figure>
+        <div class="about__copy">
+          <h2 class="h2" id="about-title" data-reveal>Quiénes somos</h2>
+          <p class="about__lead" data-reveal>Somos un equipo de Bahía Blanca que se dedica a que tu pileta esté siempre lista para usar.</p>
+          <p data-reveal>Vamos con nuestras herramientas, medimos el agua, aspiramos el fondo y dejamos el filtro funcionando. Trabajamos todo el año: aunque la pileta no se use, el mantenimiento no para. Y en otoño, cuando el viento bahiense la llena de hojas, es cuando más hace falta.</p>
+          <ul class="pillars" role="list">
+            <li data-reveal style="--d:0ms"><span class="pillars__ico"><svg aria-hidden="true"><use href="#i-drop"/></svg></span><div><strong>Agua en su punto</strong><span>Medimos cloro y pH en cada visita.</span></div></li>
+            <li data-reveal style="--d:90ms"><span class="pillars__ico"><svg aria-hidden="true"><use href="#i-check"/></svg></span><div><strong>Con todo lo necesario</strong><span>Barrefondo, sacahojas, cepillos y productos.</span></div></li>
+            <li data-reveal style="--d:180ms"><span class="pillars__ico"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><div><strong>Consejos entre visitas</strong><span>Te explicamos cómo cuidarla día a día.</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="services" id="servicios" aria-labelledby="services-title">
+      <div class="section-head">
+        <h2 class="h2" id="services-title" data-reveal>Qué hacemos</h2>
+        <p data-reveal>Desde una pileta verde hasta el mantenimiento de todos los meses. Tocá cada servicio para ver de qué se trata.</p>
+      </div>
+      <div class="services__grid" data-services>
+        <div class="services__list">
+          <div class="service is-on" data-img="assets/img/servicio-verde.webp" data-alt="Pileta con el agua verde antes de recuperarla">
+            <h3 class="service__head"><button class="service__btn" type="button" id="s1" aria-expanded="true" aria-controls="s1-text">Recuperación de piletas verdes</button></h3>
+            <div class="service__body" id="s1-text" role="region" aria-labelledby="s1"><div>
+              <p>Agua verde, turbia o negra: tratamiento de choque, aspirado, cepillado de paredes y filtrado hasta dejarla cristalina.</p>
+              <img class="service__thumb" src="assets/img/servicio-verde.webp" width="1440" height="1920" alt="Pileta con el agua verde antes de recuperarla" loading="lazy">
+            </div></div>
+          </div>
+          <div class="service" data-img="assets/img/servicio-mantenimiento.webp" data-alt="Pileta limpia de agua celeste en un jardín, con un tobogán al costado">
+            <h3 class="service__head"><button class="service__btn" type="button" id="s2" aria-expanded="false" aria-controls="s2-text">Mantenimiento mensual</button></h3>
+            <div class="service__body" id="s2-text" role="region" aria-labelledby="s2"><div>
+              <p>Una o dos visitas por mes: control de cloro y pH, aspirado y limpieza de skimmer y prefiltro. En otoño recomendamos dos.</p>
+              <img class="service__thumb" src="assets/img/servicio-mantenimiento.webp" width="1080" height="1080" alt="Pileta limpia de agua celeste en un jardín, con un tobogán al costado" loading="lazy">
+            </div></div>
+          </div>
+          <div class="service" data-img="assets/img/servicio-limpieza.jpg" data-alt="Sacahojas, barrefondo, cepillo y manguera al borde de una pileta al atardecer">
+            <h3 class="service__head"><button class="service__btn" type="button" id="s3" aria-expanded="false" aria-controls="s3-text">Limpieza y puesta a punto</button></h3>
+            <div class="service__body" id="s3-text" role="region" aria-labelledby="s3"><div>
+              <p>Antes del verano dejamos paredes, fondo y equipo listos, para que la uses desde el primer día de calor.</p>
+              <img class="service__thumb" src="assets/img/servicio-limpieza.jpg" width="1350" height="1128" alt="Sacahojas, barrefondo, cepillo y manguera al borde de una pileta al atardecer" loading="lazy">
+            </div></div>
+          </div>
+          <div class="service" data-img="assets/img/trabajo-dic25-equipo.webp" data-alt="Equipo de filtrado nuevo con bomba, filtro y válvulas en su caja">
+            <h3 class="service__head"><button class="service__btn" type="button" id="s4" aria-expanded="false" aria-controls="s4-text">Filtro, bomba y circuito</button></h3>
+            <div class="service__body" id="s4-text" role="region" aria-labelledby="s4"><div>
+              <p>Revisamos bomba, filtro de arena, válvulas y caños. Si algo falla, te decimos qué conviene cambiar y lo resolvemos.</p>
+              <img class="service__thumb" src="assets/img/trabajo-dic25-equipo.webp" width="1440" height="1920" alt="Equipo de filtrado nuevo con bomba, filtro y válvulas en su caja" loading="lazy">
+            </div></div>
+          </div>
+        </div>
+        <figure class="services__photo pool" data-reveal="photo" aria-hidden="true">
+          <img src="assets/img/servicio-verde.webp" width="1440" height="1920" alt="" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <!-- Trabajos -->
+    <section class="work" id="trabajos" aria-labelledby="work-title">
+      <div class="work__inner">
+        <div class="work__copy">
+          <h2 class="h2" id="work-title" data-reveal>Antes y después</h2>
+          <p data-reveal>Fotos reales de nuestros trabajos. Elegí uno y deslizá sobre la foto para comparar.</p>
+
+          <div class="projects" role="group" aria-label="Elegí un trabajo" data-reveal>
+            <button class="project is-on" type="button" aria-pressed="true" data-project="0">
+              <img src="assets/img/trabajo-dic25-antes.webp" alt="" width="1440" height="1920" loading="lazy"><span>Pileta verde</span>
+            </button>
+            <button class="project" type="button" aria-pressed="false" data-project="1">
+              <img src="assets/img/equipo-antes.webp" alt="" width="1440" height="1920" loading="lazy"><span>Equipo de filtrado</span>
+            </button>
+          </div>
+
+          <div class="case" aria-live="polite">
+            <h3 class="case__title" id="case-title">Del verde al turquesa</h3>
+            <p class="case__meta" id="case-meta">Diciembre de 2025</p>
+            <p class="case__text" id="case-text">Agua verde y un equipo que no filtraba. Recuperamos el agua, limpiamos fondo y paredes e instalamos un circuito de filtrado nuevo.</p>
+          </div>
+          <a class="link-arrow" href="https://www.instagram.com/clearwaterpiscinas_/" target="_blank" rel="noopener">Más trabajos en Instagram<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+
+        <div class="compare pool" data-compare data-reveal="photo">
+          <div class="compare__pane compare__before"><img src="assets/img/trabajo-dic25-antes.webp" width="1440" height="1920" alt="Antes: pileta con agua verde y hojas en el fondo" loading="lazy"></div>
+          <div class="compare__pane compare__after"><img src="assets/img/trabajo-dic25-despues.webp" width="1440" height="1919" alt="Después: la misma pileta con agua turquesa y limpia" loading="lazy" style="transform: scale(1.4); transform-origin: 70% 15%"></div>
+          <span class="tag tag--before" aria-hidden="true">Antes</span>
+          <span class="tag tag--after" aria-hidden="true">Después</span>
+          <span class="compare__edge" aria-hidden="true"><span class="compare__grip"></span></span>
+          <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Comparar la foto de antes con la de después">
+        </div>
+      </div>
+    </section>
+
+    <!-- Opiniones -->
+    <section class="voices" id="opiniones" aria-labelledby="voices-title">
+      <svg class="swirl" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true"><path d="M-60 210C160 40 420 60 520 240s-60 380 140 460 420-160 560-60 220 220 340 160"/><path d="M1180 -40c-90 160-20 290 120 330s210 140 170 280"/></svg>
+      <div class="voices__inner">
+        <div class="voices__head">
+          <h2 class="h2" id="voices-title" data-reveal>Nos recomiendan</h2>
+          <figure class="quote" data-reveal>
+            <blockquote><p>“Como siempre, muy buen trabajo. ¡Excelente servicio! Con ustedes, de 10.”</p></blockquote>
+            <figcaption>Un cliente, por WhatsApp</figcaption>
+          </figure>
+        </div>
+        <ul class="chat" role="list" aria-label="Mensajes de clientes por WhatsApp">
+          <li class="bubble" data-pop style="--i:0"><p>impecable! excelente trabajo! muchas gracias!!</p><time>12:20</time></li>
+          <li class="bubble bubble--alt" data-pop style="--i:1"><p>Buen día, muy conforme y los felicito por el personal que tiene trabajando en su equipo. Juan Cruz, una excelente persona!!!</p><time>10:38</time></li>
+          <li class="bubble" data-pop style="--i:2"><p>Nos pegamos a ustedes xq le ponen tanta polenta a sus proyectos, que contagian!!!</p><time>13:46</time></li>
+          <li class="bubble bubble--alt" data-pop style="--i:3"><p>Conforme como siempre!! Mil gracias</p><time>08:12</time></li>
+          <li class="bubble" data-pop style="--i:4"><p>Gracias chicos son geniales</p><time>12:19</time></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Zonas -->
+    <section class="zones" id="zonas" aria-labelledby="zones-title">
+      <div class="mosaic" aria-hidden="true"></div>
+      <div class="zones__inner">
+        <div class="zones__copy">
+          <h2 class="h2" id="zones-title" data-reveal>Dónde trabajamos</h2>
+          <p data-reveal>Vamos a domicilio en toda la ciudad y en las localidades de alrededor.</p>
+          <div class="zone" data-reveal>
+            <h3><span class="key key--city" aria-hidden="true"></span>Bahía Blanca</h3>
+            <p>Centro, Palihue, Patagonia, Universitario, Villa Mitre, Bella Vista, Napostá, Villa Floresta, Aldea Romana, Los Almendros, Santa Margarita, Tiro Federal y el resto de la ciudad.</p>
+          </div>
+          <div class="zone" data-reveal>
+            <h3><span class="key key--near" aria-hidden="true"></span>Alrededores</h3>
+            <p>Ingeniero White, General Daniel Cerri, Grünbein, Villa Bordeu y Punta Alta.</p>
+          </div>
+          <p class="zones__note" data-reveal>Zonas de ejemplo en esta versión preliminar, a confirmar.</p>
+          <a class="btn btn--primary" data-wa="Hola ClearWater! ¿Trabajan en mi zona? Estoy en " href="https://wa.me/5492910000000?text=Hola%20ClearWater!%20%C2%BFTrabajan%20en%20mi%20zona%3F"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Consultar mi zona</a>
+        </div>
+        <div class="zones__map" data-reveal="photo">
+          <div id="mapa" role="region" aria-label="Mapa de las zonas donde trabajamos">
+            <noscript><p class="zones__nomap">El mapa necesita JavaScript. Las zonas están en la lista.</p></noscript>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pedir visita -->
+    <section class="order" id="pedir" aria-labelledby="order-title">
+      <div class="order__inner">
+        <div class="order__copy">
+          <h2 class="h2" id="order-title" data-reveal>Pedí tu visita<br>en tres pasos</h2>
+          <ol class="steps" role="list">
+            <li data-reveal style="--d:0ms"><strong>Contanos cómo está tu pileta</strong><span>Completá la ficha: arma el mensaje por vos.</span></li>
+            <li data-reveal style="--d:90ms"><strong>Coordinamos la visita</strong><span>Te respondemos por WhatsApp y acordamos día y horario.</span></li>
+            <li data-reveal style="--d:180ms"><strong>Vos disfrutá</strong><span>La primera visita, para ver cómo está la pileta, es sin cargo.</span></li>
+          </ol>
+          <figure class="captain" data-reveal>
+            <img src="assets/img/capitan-hojas.jpg" width="1080" height="1350" alt="El Capitán Hojas, la mascota de ClearWater: un sacahojas con cara, guantes y zapatillas, que saluda" loading="lazy">
+            <figcaption><strong>¿Dudas antes de pedir?</strong> El Capitán Hojas, nuestra mascota, deja consejos de mantenimiento en <a class="link" href="https://www.instagram.com/clearwaterpiscinas_/" target="_blank" rel="noopener">Instagram</a>.</figcaption>
+          </figure>
+        </div>
+
+        <form class="ticket" id="orden" data-reveal="slip" novalidate>
+          <div class="ticket__head">
+            <h3>Tu pedido</h3>
+            <p>Se envía por WhatsApp</p>
+          </div>
+
+          <fieldset class="field">
+            <legend>¿Cómo está el agua?</legend>
+            <div class="swatches">
+              <label class="swatch"><input type="radio" name="agua" value="cristalina"><span class="swatch__img"><img src="assets/img/trabajo-sep26-despues.jpg" alt="" width="64" height="64" loading="lazy"></span><span>Cristalina</span></label>
+              <label class="swatch"><input type="radio" name="agua" value="turbia"><span class="swatch__img"><img src="assets/img/agua-turbia.webp" alt="" width="64" height="64" loading="lazy"></span><span>Turbia</span></label>
+              <label class="swatch"><input type="radio" name="agua" value="verde" checked><span class="swatch__img"><img src="assets/img/trabajo-dic25-antes.webp" alt="" width="64" height="64" loading="lazy"></span><span>Verde</span></label>
+              <label class="swatch"><input type="radio" name="agua" value="negra"><span class="swatch__img"><img src="assets/img/trabajo-sep26-antes.jpg" alt="" width="64" height="64" loading="lazy"></span><span>Negra</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>¿Qué necesitás?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="servicio" value="recuperarla" checked><span>Recuperarla</span></label>
+              <label class="choice"><input type="radio" name="servicio" value="mantenimiento"><span>Mantenimiento mensual</span></label>
+              <label class="choice"><input type="radio" name="servicio" value="puesta a punto"><span>Puesta a punto</span></label>
+              <label class="choice"><input type="radio" name="servicio" value="equipo"><span>Revisar el equipo</span></label>
+              <label class="choice"><input type="radio" name="servicio" value="no sé"><span>No sé</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field field--row">
+            <label class="input">
+              <span>Barrio o localidad</span>
+              <input type="text" name="zona" list="zonas-lista" autocomplete="address-level2" placeholder="Ej.: Palihue" spellcheck="false">
+            </label>
+            <label class="input">
+              <span>Tu nombre <em>(opcional)</em></span>
+              <input type="text" name="nombre" autocomplete="given-name" placeholder="Ej.: Laura">
+            </label>
+            <datalist id="zonas-lista">
+              <option value="Centro"><option value="Palihue"><option value="Patagonia"><option value="Universitario"><option value="Villa Mitre"><option value="Bella Vista"><option value="Napostá"><option value="Villa Floresta"><option value="Aldea Romana"><option value="Los Almendros"><option value="Santa Margarita"><option value="Tiro Federal"><option value="Ingeniero White"><option value="General Daniel Cerri"><option value="Grünbein"><option value="Villa Bordeu"><option value="Punta Alta">
+            </datalist>
+          </div>
+
+          <div class="preview" aria-live="polite">
+            <p class="preview__label">Así llega tu mensaje</p>
+            <p class="preview__text" id="orden-mensaje">Hola ClearWater! Mi pileta está verde y quiero recuperarla. ¿Cuándo pueden venir a verla?</p>
+          </div>
+
+          <a class="btn btn--wa btn--big btn--full" id="orden-enviar" href="https://wa.me/5492910000000?text=Hola%20ClearWater!%20Quiero%20pedir%20una%20visita%20para%20mi%20pileta." target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Enviar por WhatsApp</a>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <a class="foot__band" data-wa="Hola ClearWater! Quiero pedir una visita para mi pileta." href="https://wa.me/5492910000000" target="_blank" rel="noopener">
+      <span class="foot__band-text">Escribinos</span>
+      <span class="foot__band-cta"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp 291 000-0000</span>
+    </a>
+    <div class="mosaic mosaic--dark" aria-hidden="true"></div>
+    <div class="foot__inner">
+      <div class="foot__brand">
+        <span class="foot__logo"><img src="assets/img/logo-clearwater.png" width="440" height="279" alt="ClearWater Piscinas" loading="lazy"></span>
+        <p>Bienvenidos al lado limpio de las piscinas.</p>
+      </div>
+      <nav class="foot__col" aria-label="Secciones del pie">
+        <h2>Secciones</h2>
+        <a href="#nosotros">Quiénes somos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#trabajos">Antes y después</a>
+        <a href="#zonas">Zonas</a>
+        <a href="#pedir">Pedir visita</a>
+      </nav>
+      <div class="foot__col">
+        <h2>Contacto</h2>
+        <a href="https://wa.me/5492910000000" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>291 000-0000</a>
+        <a href="https://www.instagram.com/clearwaterpiscinas_/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg>@clearwaterpiscinas_</a>
+        <p><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Bahía Blanca, Buenos Aires</p>
+      </div>
+    </div>
+    <div class="foot__legal">
+      <p>© 2026 ClearWater Piscinas · Versión preliminar: número de WhatsApp y zonas de ejemplo.</p>
+      <p>Texturas de agua: “Water Ripples”, Drakonfly, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, y “Caustic light”, fdecomite, <a href="https://creativecommons.org/licenses/by/2.0" target="_blank" rel="noopener">CC BY 2.0</a>, vía Wikimedia Commons.</p>
+    </div>
+  </footer>
+
+  <a class="dock btn btn--wa" href="#pedir" data-dock><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Pedir visita por WhatsApp</a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
