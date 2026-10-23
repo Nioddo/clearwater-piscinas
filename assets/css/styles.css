@@ -208,7 +208,7 @@ strong { font-weight: 600; }
 .svc img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: scale 600ms var(--ease-out); }
 .svc__body { display: grid; gap: 8px; align-content: start; padding: 20px 22px 22px; }
 .svc h3 { font-family: var(--serif); font-weight: 700; font-size: var(--t-h3); line-height: 1.25; }
-.svc p { font-size: var(--t-small); line-height: 1.55; }
+.svc p { font-size: 1rem; line-height: 1.5; }
 .svc__link { display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; font-weight: 600; font-size: var(--t-small); color: var(--petrol); text-decoration: none; justify-self: start; }
 .svc__link .ico { transition: transform var(--t-ui) var(--ease-out); }
 @media (hover: hover) and (pointer: fine) {
@@ -301,7 +301,7 @@ strong { font-weight: 600; }
 .barrios { display: flex; flex-wrap: wrap; gap: 8px; max-width: 560px; }
 .barrios li {
   display: inline-flex; align-items: center; gap: 7px; padding: 6px 13px 6px 9px; border-radius: 999px;
-  background: var(--white); color: var(--navy); font-size: var(--t-small); font-weight: 500; line-height: 1.2;
+  background: var(--white); color: var(--navy); font-size: 1rem; font-weight: 500; line-height: 1.2;
   transition: background-color var(--t-hover) ease, color var(--t-hover) ease, transform var(--t-press) var(--ease-out);
 }
 /* Viñeta: una gota de agua */
