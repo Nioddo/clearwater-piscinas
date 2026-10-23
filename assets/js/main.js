@@ -13,7 +13,7 @@ addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
 /* ---------- Entradas al aparecer (una sola vez) ---------- */
-const revealables = document.querySelectorAll('[data-reveal], [data-pop]');
+const revealables = document.querySelectorAll('[data-reveal]');
 if (hasIO) {
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) {

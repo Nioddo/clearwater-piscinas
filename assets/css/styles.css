@@ -1,7 +1,6 @@
 /* ClearWater Piscinas — sitio informativo
    Marca: crema de sus placas, azules del logo, la serif del logotipo y la sans de sus posteos.
-   Motivo: la pileta romana (rectángulo con un extremo en semicírculo), la franja de venecitas
-   y los remolinos celestes de sus placas. */
+   Recursos: la franja de venecitas y los remolinos celestes de sus placas. */
 
 :root {
   --cream: #FDF8F2;
@@ -30,7 +29,6 @@
   --max: 1320px;
   --gap: clamp(20px, 2.6vw, 40px);
   --pad: clamp(56px, 6.5vw, 100px);
-  --r: 28px;
   --rc: 16px;
   --rf: 20px;
 
@@ -421,9 +419,6 @@ strong { font-weight: 600; }
   .js [data-reveal="photo"].is-in { clip-path: inset(0 0 0 0 round var(--rf)); }
   .js [data-reveal="slip"] { transform: translateY(48px) rotate(-1.5deg); transform-origin: 0 100%; transition: opacity 600ms var(--ease-out), transform 1100ms var(--ease-out); }
 
-  .js [data-pop] { opacity: 0; transform: translateY(14px) scale(0.96); transform-origin: 0 100%; transition: opacity 500ms var(--ease-out), transform 600ms var(--ease-out); transition-delay: calc(var(--i) * 110ms); }
-  .js .bubble--alt[data-pop] { transform-origin: 100% 100%; }
-  .js [data-pop].is-in { opacity: 1; transform: none; }
 
   .js .swirl path { stroke-dasharray: 2600; stroke-dashoffset: 2600; animation: draw 2600ms var(--ease-soft) 200ms forwards; }
   @keyframes draw { to { stroke-dashoffset: 0; } }
