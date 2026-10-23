@@ -29,6 +29,31 @@
     <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></g></symbol>
+    <symbol id="fig-skimmer" viewBox="0 0 200 380">
+      <defs><pattern id="mesh" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1.6" fill="#93C8D0"/></pattern></defs>
+      <rect x="93" y="150" width="14" height="230" rx="7" fill="var(--f2)"/>
+      <path d="M30 18h140c14 0 20 8 17 20l-17 92c-3 14-12 20-26 20H56c-14 0-23-6-26-20L13 38c-3-12 3-20 17-20z" fill="var(--f3)"/>
+      <path d="M30 18h140c14 0 20 8 17 20l-17 92c-3 14-12 20-26 20H56c-14 0-23-6-26-20L13 38c-3-12 3-20 17-20z" fill="url(#mesh)" stroke="var(--f1)" stroke-width="10" stroke-linejoin="round"/>
+      <rect x="84" y="144" width="32" height="24" rx="5" fill="var(--f1)"/>
+      <path d="M62 62c18-16 44-10 50 8-18 14-40 12-50-8z" fill="var(--turq)" opacity=".55"/>
+      <path d="M118 92c10-14 32-14 38 2-12 12-30 12-38-2z" fill="var(--turq)" opacity=".4"/>
+    </symbol>
+    <symbol id="fig-vacuum" viewBox="0 0 320 230">
+      <rect x="146" y="0" width="18" height="96" rx="9" fill="var(--f2)" transform="rotate(14 155 96)"/>
+      <rect x="132" y="72" width="44" height="46" rx="12" fill="var(--f1)"/>
+      <rect x="18" y="106" width="284" height="60" rx="18" fill="var(--f2)"/>
+      <rect x="40" y="122" width="240" height="10" rx="5" fill="var(--f3)"/>
+      <g fill="var(--f3)"><rect x="34" y="166" width="6" height="22" rx="3"/><rect x="46" y="166" width="6" height="22" rx="3"/><rect x="58" y="166" width="6" height="22" rx="3"/><rect x="70" y="166" width="6" height="22" rx="3"/><rect x="82" y="166" width="6" height="22" rx="3"/><rect x="94" y="166" width="6" height="22" rx="3"/><rect x="106" y="166" width="6" height="22" rx="3"/><rect x="118" y="166" width="6" height="22" rx="3"/><rect x="130" y="166" width="6" height="22" rx="3"/><rect x="142" y="166" width="6" height="22" rx="3"/><rect x="154" y="166" width="6" height="22" rx="3"/><rect x="166" y="166" width="6" height="22" rx="3"/><rect x="178" y="166" width="6" height="22" rx="3"/><rect x="190" y="166" width="6" height="22" rx="3"/><rect x="202" y="166" width="6" height="22" rx="3"/><rect x="214" y="166" width="6" height="22" rx="3"/><rect x="226" y="166" width="6" height="22" rx="3"/><rect x="238" y="166" width="6" height="22" rx="3"/><rect x="250" y="166" width="6" height="22" rx="3"/><rect x="262" y="166" width="6" height="22" rx="3"/><rect x="274" y="166" width="6" height="22" rx="3"/><rect x="286" y="166" width="6" height="22" rx="3"/></g>
+      <circle cx="44" cy="186" r="20" fill="var(--f1)"/><circle cx="44" cy="186" r="8" fill="var(--f3)"/>
+      <circle cx="276" cy="186" r="20" fill="var(--f1)"/><circle cx="276" cy="186" r="8" fill="var(--f3)"/>
+    </symbol>
+    <symbol id="fig-float" viewBox="0 0 200 200">
+      <ellipse cx="100" cy="128" rx="92" ry="44" fill="var(--f2)"/>
+      <ellipse cx="100" cy="118" rx="92" ry="44" fill="var(--f3)" stroke="var(--f1)" stroke-width="8"/>
+      <path d="M58 116c0-40 18-70 42-70s42 30 42 70" fill="var(--white)" stroke="var(--f1)" stroke-width="8"/>
+      <rect x="76" y="20" width="48" height="32" rx="10" fill="var(--turq)" opacity=".7"/>
+      <g stroke="var(--f1)" stroke-width="6" stroke-linecap="round"><path d="M82 82v24M100 76v30M118 82v24"/></g>
+    </symbol>
     <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></g></symbol>
   </svg>
 
@@ -84,6 +109,8 @@
 
     <!-- Servicios -->
     <section class="services" id="servicios" aria-labelledby="services-title">
+      <svg class="fig fig--skimmer" aria-hidden="true"><use href="#fig-skimmer"/></svg>
+      <svg class="fig fig--hose" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true"><path class="hose" d="M-40 170C160 60 300 210 480 150s260-110 440-40 300 120 560 20"/><path class="hose hose--ribs" d="M-40 170C160 60 300 210 480 150s260-110 440-40 300 120 560 20"/></svg>
       <div class="mosaic" aria-hidden="true"></div>
       <div class="services__inner">
         <div class="section-head">
@@ -103,22 +130,18 @@
         <ul class="svc-list" role="list">
           <li class="svc" data-reveal style="--d:0ms">
             <img src="assets/img/servicio-verde.webp" width="1440" height="1920" alt="Pileta con el agua verde antes de recuperarla" loading="lazy">
-            <span class="svc__tiles" aria-hidden="true"></span>
             <div class="svc__body"><h3>Recuperación de piletas verdes</h3><p>Agua verde, turbia o negra: tratamiento de choque, aspirado, cepillado y filtrado hasta dejarla cristalina.</p><a class="svc__link" href="#pedir" data-pick="recuperarla">Pedir este servicio<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
           </li>
           <li class="svc" data-reveal style="--d:80ms">
             <img src="assets/img/servicio-mantenimiento.webp" width="1080" height="1080" alt="Pileta limpia de agua celeste en un jardín" loading="lazy">
-            <span class="svc__tiles" aria-hidden="true"></span>
             <div class="svc__body"><h3>Mantenimiento mensual</h3><p>Una o dos visitas por mes: cloro y pH, aspirado, skimmer y prefiltro. En otoño recomendamos dos.</p><a class="svc__link" href="#pedir" data-pick="mantenimiento">Pedir este servicio<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
           </li>
           <li class="svc" data-reveal style="--d:160ms">
             <img src="assets/img/servicio-limpieza.jpg" width="1350" height="1128" alt="Sacahojas, barrefondo, cepillo y manguera al borde de una pileta" loading="lazy">
-            <span class="svc__tiles" aria-hidden="true"></span>
             <div class="svc__body"><h3>Limpieza y puesta a punto</h3><p>Antes del verano dejamos paredes, fondo y equipo listos para el primer día de calor.</p><a class="svc__link" href="#pedir" data-pick="puesta a punto">Pedir este servicio<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
           </li>
           <li class="svc" data-reveal style="--d:240ms">
             <img src="assets/img/trabajo-dic25-equipo.webp" width="1440" height="1920" alt="Equipo de filtrado nuevo con bomba, filtro y válvulas" loading="lazy">
-            <span class="svc__tiles" aria-hidden="true"></span>
             <div class="svc__body"><h3>Filtro, bomba y circuito</h3><p>Revisamos bomba, filtro, válvulas y caños. Si algo falla, te decimos qué conviene cambiar.</p><a class="svc__link" href="#pedir" data-pick="equipo">Pedir este servicio<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
           </li>
         </ul>
@@ -163,6 +186,8 @@
 
     <!-- Zonas -->
     <section class="zones" id="zonas" aria-labelledby="zones-title">
+      <svg class="fig fig--float" aria-hidden="true"><use href="#fig-float"/></svg>
+      <svg class="fig fig--vacuum" aria-hidden="true"><use href="#fig-vacuum"/></svg>
       <div class="mosaic" aria-hidden="true"></div>
       <div class="zones__inner">
         <div class="zones__copy">
@@ -257,7 +282,7 @@
 
   <footer class="foot">
     <a class="foot__band" data-wa="Hola ClearWater! Quiero pedir una visita para mi pileta." href="https://wa.me/5492910000000" target="_blank" rel="noopener">
-      <span class="foot__band-text scribble">Escribinos<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 16c30-10 54-10 80-2s50 8 76-2 52-10 78-2 40 6 58 0"/></svg></span>
+      <span class="foot__band-text">Escribinos</span>
       <span class="foot__band-cta"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp 291 000-0000</span>
     </a>
     <div class="mosaic mosaic--dark" aria-hidden="true"></div>

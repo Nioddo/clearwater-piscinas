@@ -183,8 +183,8 @@ strong { font-weight: 600; }
 .bubbles i { position: absolute; left: var(--x); bottom: -40px; width: var(--s); height: var(--s); border-radius: 50%; border: 2px solid var(--turq); opacity: 0; }
 
 /* ---------- Servicios que ofrecemos ---------- */
-.services { background: var(--sky-2); }
-.services__inner { max-width: var(--max); margin: 0 auto; padding: var(--pad) var(--m); }
+.services { position: relative; overflow: hidden; background: var(--sky-2); }
+.services__inner { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: var(--pad) var(--m); }
 .section-head { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); align-items: end; margin-bottom: clamp(28px, 3.5vw, 48px); }
 .section-head p { max-width: 44ch; justify-self: end; }
 .diag {
@@ -205,7 +205,6 @@ strong { font-weight: 600; }
   transition: transform 420ms var(--ease-out), box-shadow 420ms var(--ease-out);
 }
 .svc img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: scale 600ms var(--ease-out); }
-.svc__tiles { height: 14px; background: var(--mosaic) 0 0 / 42px 14px repeat-x; }
 .svc__body { display: grid; gap: 8px; align-content: start; padding: 20px 22px 22px; }
 .svc h3 { font-family: var(--serif); font-weight: 700; font-size: var(--t-h3); line-height: 1.25; }
 .svc p { font-size: var(--t-small); line-height: 1.55; }
@@ -216,6 +215,15 @@ strong { font-weight: 600; }
   .svc:hover img { scale: 1.06; }
   .svc:hover .svc__link .ico { transform: translateX(4px); }
 }
+
+/* Figuras de pileta en los fondos lisos: suaves, detrás del contenido */
+.fig { position: absolute; z-index: 0; pointer-events: none; --f1: #93C8D0; --f2: #B3DBE0; --f3: #CDE8EC; }
+.fig--skimmer { right: 3%; top: 54px; width: 150px; height: 285px; rotate: 22deg; }
+.fig--hose { left: 0; bottom: -10px; width: 100%; height: 180px; }
+.hose { fill: none; stroke: var(--f1); stroke-width: 34; stroke-linecap: round; }
+.hose--ribs { stroke: var(--f2); stroke-width: 34; stroke-dasharray: 5 9; stroke-linecap: butt; }
+.fig--float { right: 6%; top: 40px; width: 130px; height: 130px; }
+.fig--vacuum { right: -30px; bottom: -14px; width: 280px; height: 202px; rotate: 8deg; }
 
 /* ---------- Antes y después ---------- */
 .work {
@@ -281,9 +289,9 @@ strong { font-weight: 600; }
 .compare:has(.compare__range:focus-visible) { outline: 3px solid var(--cream); outline-offset: 4px; }
 
 /* ---------- Zonas ---------- */
-.zones { background: var(--sky-2); }
+.zones { position: relative; overflow: hidden; background: var(--sky-2); }
 .zones__inner {
-  max-width: var(--max); margin: 0 auto; padding: var(--pad) var(--m);
+  position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: var(--pad) var(--m);
   display: grid; grid-template-columns: 5fr 7fr; gap: clamp(36px, 6vw, 96px); align-items: center;
 }
 .zones__copy { display: grid; gap: 20px; justify-items: start; }
@@ -390,8 +398,6 @@ strong { font-weight: 600; }
   padding: clamp(28px, 3.5vw, 44px) var(--m);
   background: var(--turq); color: var(--night); text-decoration: none;
 }
-.foot__band-text.scribble svg { height: 0.16em; bottom: -0.06em; }
-.foot__band-text.scribble path { stroke: var(--night); stroke-width: 6; }
 .foot__band-text { font-family: var(--serif); font-weight: 800; font-size: clamp(3rem, 8vw, 7rem); line-height: 0.9; letter-spacing: -0.03em; transition: transform 500ms var(--ease-out); }
 .foot__band-cta { display: inline-flex; align-items: center; gap: 10px; min-height: 58px; padding: 0 28px; border-radius: 999px; background: var(--night); color: var(--white); font-weight: 600; transition: transform var(--t-press) var(--ease-out); }
 .foot__band:active .foot__band-cta { transform: scale(0.97); }
@@ -435,6 +441,10 @@ strong { font-weight: 600; }
   .diag img { max-height: 220px; min-height: 0; aspect-ratio: 16 / 9; }
   .svc-list { grid-template-columns: 1fr; }
   .svc img { aspect-ratio: 16 / 9; }
+  .fig--skimmer { width: 90px; height: 171px; right: -10px; top: 30px; }
+  .fig--float { width: 84px; height: 84px; top: 20px; right: 4%; }
+  .fig--vacuum { width: 180px; height: 130px; left: auto; right: -30px; bottom: 6px; }
+  .fig--hose { height: 110px; }
   .hero__before { left: -6px; width: 40%; padding: 7px 7px 0; }
   .hand { font-size: 1.5rem; }
   .hand--after { font-size: 1.9rem; top: -34px; right: 8px; }
@@ -481,20 +491,18 @@ strong { font-weight: 600; }
   .js .scribble path { stroke-dasharray: 400; stroke-dashoffset: 400; animation: draw 900ms var(--ease-out) 700ms forwards; }
   .bubbles i { animation: bubble var(--t) linear var(--d) infinite; }
   @keyframes bubble { 0% { opacity: 0; transform: translate(0, 0); } 12% { opacity: 0.7; } 50% { transform: translate(14px, -45vh); } 90% { opacity: 0.4; } 100% { opacity: 0; transform: translate(-10px, -92vh); } }
-  .mosaic { animation: tiles 40s linear infinite; }
   .js .steps li[data-reveal]::after { transform: scaleY(0); transition: transform 800ms var(--ease-out) 400ms; }
   .js .steps li[data-reveal].is-in::after { transform: scaleY(1); }
   .js .steps li[data-reveal]::before { scale: 0.6; transition: scale 600ms var(--ease-out) 150ms; }
   .js .steps li[data-reveal].is-in::before { scale: 1; }
   .zones .town::after { animation: ping 2.4s var(--ease-out) infinite; }
+  .fig--skimmer, .fig--float, .fig--vacuum { animation: bob 7s ease-in-out infinite alternate; }
+  .fig--float { animation-duration: 5s; }
+  @keyframes bob { from { translate: 0 0; } to { translate: 0 -14px; } }
   @keyframes ping { 0% { opacity: 0.7; transform: scale(1); } 100% { opacity: 0; transform: scale(2.6); } }
   .js .zones__map .city-poly { stroke-dasharray: 1800; stroke-dashoffset: 1800; fill-opacity: 0; transition: stroke-dashoffset 2200ms var(--ease-out) 300ms, fill-opacity 900ms ease 1800ms; }
   .js .zones__map.is-in .city-poly { stroke-dashoffset: 0; fill-opacity: 0.32; }
-  .ticket::before, .diag::after, .svc__tiles { animation: tiles-sm 30s linear infinite; }
-  @keyframes tiles-sm { to { background-position-x: 840px; } }
-  .js .foot__band .scribble path { stroke-dasharray: 400; stroke-dashoffset: 400; transition: stroke-dashoffset 900ms var(--ease-out); }
-  .js .foot__band.is-in .scribble path { stroke-dashoffset: 0; }
-  @keyframes tiles { to { background-position-x: 960px; } }
+
   .js .h2[data-reveal]::after { clip-path: inset(0 100% 0 0); transition: clip-path 900ms var(--ease-out) 350ms; }
   .js .h2[data-reveal].is-in::after { clip-path: inset(0 0 0 0); }
   @keyframes pop { 60% { opacity: 1; scale: 1.04; } to { opacity: 1; scale: 1; } }
