@@ -1,6 +1,6 @@
 // ClearWater Piscinas
-// Dato de muestra: reemplazar por el número real (código de país + área sin 0 + número sin 15).
-const WHATSAPP = '5492910000000';
+// WhatsApp de ClearWater: +54 9 291 444-4431
+const WHATSAPP = '5492914444431';
 
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const waLink = (text) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;

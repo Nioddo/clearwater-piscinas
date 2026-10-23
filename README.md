@@ -10,11 +10,12 @@ HTML, CSS y JS estáticos, sin build. Se abre directo con `index.html` o se publ
 2. En GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a branch**, rama `main`, carpeta `/ (root)`.
 3. En uno o dos minutos queda en `https://<usuario>.github.io/clearwater-piscinas/`.
 
+WhatsApp: +54 9 291 444-4431 (`assets/js/main.js`, constante `WHATSAPP`, y los enlaces `wa.me` de `index.html`).
+
 ## Datos de muestra a confirmar con el cliente
 
 | Dato | Dónde se cambia |
 | --- | --- |
-| Número de WhatsApp (`5492910000000`, se muestra como 291 000-0000) | `assets/js/main.js` (constante `WHATSAPP`) y los `href="https://wa.me/..."` de `index.html` |
 | Barrios y localidades donde trabajan | Sección `#zonas` y `<datalist id="zonas-lista">` en `index.html` |
 | Polígono de la zona urbana y puntos del mapa | `assets/js/main.js` (`city` y `towns`) |
 | Lista de servicios y su descripción | Sección `#servicios` de `index.html` |

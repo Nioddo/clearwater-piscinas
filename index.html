@@ -79,8 +79,8 @@
       <div class="bubbles" aria-hidden="true"><i style="--x:6%;--s:14px;--t:11s;--d:0s"></i><i style="--x:18%;--s:8px;--t:9s;--d:3s"></i><i style="--x:34%;--s:18px;--t:13s;--d:6s"></i><i style="--x:47%;--s:10px;--t:10s;--d:1.5s"></i><i style="--x:58%;--s:6px;--t:8s;--d:4.5s"></i><i style="--x:71%;--s:16px;--t:12s;--d:2s"></i><i style="--x:84%;--s:9px;--t:9.5s;--d:7s"></i><i style="--x:93%;--s:12px;--t:11.5s;--d:5s"></i></div>
       <div class="hero__inner">
         <div class="hero__copy">
-          <h1 class="hero__title" id="hero-title" data-rise style="--i:0">Tu pileta lista<br>para <span class="scribble">disfrutar<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 16c30-10 54-10 80-2s50 8 76-2 52-10 78-2 40 6 58 0"/></svg></span></h1>
-          <p class="hero__lead" data-rise style="--i:1">Limpiamos, recuperamos y mantenemos piletas en Bahía Blanca y la zona. Vos disfrutá, nosotros hacemos el resto.</p>
+          <h1 class="hero__title" id="hero-title" data-rise style="--i:0">Tu pileta lista<br><span class="nowrap">para <span class="scribble">disfrutar<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 16c30-10 54-10 80-2s50 8 76-2 52-10 78-2 40 6 58 0"/></svg></span></span></h1>
+          <p class="hero__lead" data-rise style="--i:1">Limpiamos, recuperamos y mantenemos piletas en Bahía Blanca y la zona. Vos disfrutá, nosotros nos hacemos cargo.</p>
           <div class="hero__actions" data-rise style="--i:2">
             <a class="btn btn--primary btn--big" href="#pedir"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Pedir visita por WhatsApp</a>
             <a class="btn btn--ghost btn--big" href="#servicios">Ver servicios</a>
@@ -195,14 +195,15 @@
           <p data-reveal>Vamos a domicilio en toda la ciudad y en las localidades de alrededor.</p>
           <div class="zone" data-reveal>
             <h3><span class="key key--city" aria-hidden="true"></span>Bahía Blanca</h3>
-            <p>Centro, Palihue, Patagonia, Universitario, Villa Mitre, Bella Vista, Napostá, Villa Floresta, Aldea Romana, Los Almendros, Santa Margarita, Tiro Federal y el resto de la ciudad.</p>
+            <ul class="barrios" role="list"><li>Centro</li><li>Palihue</li><li>Patagonia</li><li>Universitario</li><li>Villa Mitre</li><li>Bella Vista</li><li>Napostá</li><li>Villa Floresta</li><li>Aldea Romana</li><li>Los Almendros</li><li>Santa Margarita</li><li>Tiro Federal</li></ul>
+            <p class="zone__more">…y el resto de la ciudad.</p>
           </div>
           <div class="zone" data-reveal>
             <h3><span class="key key--near" aria-hidden="true"></span>Alrededores</h3>
-            <p>Ingeniero White, General Daniel Cerri, Grünbein, Villa Bordeu y Punta Alta.</p>
+            <ul class="barrios" role="list"><li>Ingeniero White</li><li>General Daniel Cerri</li><li>Grünbein</li><li>Villa Bordeu</li><li>Punta Alta</li></ul>
           </div>
           <p class="zones__note" data-reveal>Zonas de ejemplo en esta versión preliminar, a confirmar.</p>
-          <a class="btn btn--primary" data-wa="Hola ClearWater! ¿Trabajan en mi zona? Estoy en " href="https://wa.me/5492910000000?text=Hola%20ClearWater!%20%C2%BFTrabajan%20en%20mi%20zona%3F"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Consultar mi zona</a>
+          <a class="btn btn--primary" data-wa="Hola ClearWater! ¿Trabajan en mi zona? Estoy en " href="https://wa.me/5492914444431?text=Hola%20ClearWater!%20%C2%BFTrabajan%20en%20mi%20zona%3F"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Consultar mi zona</a>
         </div>
         <div class="zones__map" data-reveal="photo">
           <div id="mapa" role="region" aria-label="Mapa de las zonas donde trabajamos">
@@ -274,16 +275,16 @@
             <div class="preview__bubble"><p class="preview__text" id="orden-mensaje">Hola ClearWater! Mi pileta está verde y quiero recuperarla. ¿Cuándo pueden venir a verla?</p><span class="preview__meta">ahora <svg class="ticks" viewBox="0 0 20 12" aria-hidden="true"><path d="M1 6.5l3.5 3.5L11 2.5M8 9.5l.5.5L16 2.5"/></svg></span></div>
           </div>
 
-          <a class="btn btn--wa btn--big btn--full" id="orden-enviar" href="https://wa.me/5492910000000?text=Hola%20ClearWater!%20Quiero%20pedir%20una%20visita%20para%20mi%20pileta." target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Enviar por WhatsApp</a>
+          <a class="btn btn--wa btn--big btn--full" id="orden-enviar" href="https://wa.me/5492914444431?text=Hola%20ClearWater!%20Quiero%20pedir%20una%20visita%20para%20mi%20pileta." target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Enviar por WhatsApp</a>
         </form>
       </div>
     </section>
   </main>
 
   <footer class="foot">
-    <a class="foot__band" data-wa="Hola ClearWater! Quiero pedir una visita para mi pileta." href="https://wa.me/5492910000000" target="_blank" rel="noopener">
+    <a class="foot__band" data-wa="Hola ClearWater! Quiero pedir una visita para mi pileta." href="https://wa.me/5492914444431" target="_blank" rel="noopener">
       <span class="foot__band-text">Escribinos</span>
-      <span class="foot__band-cta"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp 291 000-0000</span>
+      <span class="foot__band-cta"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp 291 444-4431</span>
     </a>
     <div class="mosaic mosaic--dark" aria-hidden="true"></div>
     <div class="foot__inner">
@@ -300,13 +301,13 @@
       </nav>
       <div class="foot__col">
         <h2>Contacto</h2>
-        <a href="https://wa.me/5492910000000" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>291 000-0000</a>
+        <a href="https://wa.me/5492914444431" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>+54 9 291 444-4431</a>
         <a href="https://www.instagram.com/clearwaterpiscinas_/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg>@clearwaterpiscinas_</a>
         <p><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Bahía Blanca, Buenos Aires</p>
       </div>
     </div>
     <div class="foot__legal">
-      <p>© 2026 ClearWater Piscinas · Versión preliminar: número de WhatsApp y zonas de ejemplo.</p>
+      <p>© 2026 ClearWater Piscinas · Versión preliminar: zonas de ejemplo.</p>
       <p>Texturas de agua: “Water Ripples”, Drakonfly, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, y “Caustic light”, fdecomite, <a href="https://creativecommons.org/licenses/by/2.0" target="_blank" rel="noopener">CC BY 2.0</a>, vía Wikimedia Commons.</p>
     </div>
   </footer>
