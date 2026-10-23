@@ -12,6 +12,21 @@ const onScroll = () => bar.classList.toggle('is-scrolled', scrollY > 8);
 addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
+/* ---------- Botones: onda de agua donde se toca ---------- */
+if (!reduceMotion) {
+  addEventListener('pointerdown', (e) => {
+    const btn = e.target.closest('.btn');
+    if (!btn) return;
+    const r = btn.getBoundingClientRect();
+    const dot = document.createElement('span');
+    dot.className = 'ripple';
+    dot.style.left = `${e.clientX - r.left}px`;
+    dot.style.top = `${e.clientY - r.top}px`;
+    btn.append(dot);
+    dot.addEventListener('animationend', () => dot.remove());
+  });
+}
+
 /* ---------- Entradas al aparecer (una sola vez) ---------- */
 const revealables = document.querySelectorAll('[data-reveal]');
 if (hasIO) {

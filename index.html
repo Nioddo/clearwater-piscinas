@@ -9,13 +9,13 @@
   <meta name="color-scheme" content="light">
   <meta property="og:title" content="ClearWater Piscinas · Tu pileta lista para disfrutar">
   <meta property="og:description" content="Limpieza, recuperación y mantenimiento de piletas en Bahía Blanca. Pedí tu visita por WhatsApp.">
-  <meta property="og:image" content="assets/img/hero-escalera.jpg">
+  <meta property="og:image" content="assets/img/trabajo-dic25-despues.webp">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Playfair+Display:wght@700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="preload" as="image" href="assets/img/hero-escalera.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/trabajo-dic25-despues.webp" fetchpriority="high">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script>document.documentElement.classList.add('js')</script>
@@ -50,9 +50,10 @@
     <!-- Portada -->
     <section class="hero" aria-labelledby="hero-title">
       <svg class="swirl" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true"><path d="M-60 210C160 40 420 60 520 240s-60 380 140 460 420-160 560-60 220 220 340 160"/><path d="M1180 -40c-90 160-20 290 120 330s210 140 170 280"/></svg>
+      <div class="bubbles" aria-hidden="true"><i style="--x:6%;--s:14px;--t:11s;--d:0s"></i><i style="--x:18%;--s:8px;--t:9s;--d:3s"></i><i style="--x:34%;--s:18px;--t:13s;--d:6s"></i><i style="--x:47%;--s:10px;--t:10s;--d:1.5s"></i><i style="--x:58%;--s:6px;--t:8s;--d:4.5s"></i><i style="--x:71%;--s:16px;--t:12s;--d:2s"></i><i style="--x:84%;--s:9px;--t:9.5s;--d:7s"></i><i style="--x:93%;--s:12px;--t:11.5s;--d:5s"></i></div>
       <div class="hero__inner">
         <div class="hero__copy">
-          <h1 class="hero__title" id="hero-title" data-rise style="--i:0">Tu pileta lista<br>para disfrutar</h1>
+          <h1 class="hero__title" id="hero-title" data-rise style="--i:0">Tu pileta lista<br>para <span class="scribble">disfrutar<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 16c30-10 54-10 80-2s50 8 76-2 52-10 78-2 40 6 58 0"/></svg></span></h1>
           <p class="hero__lead" data-rise style="--i:1">Limpiamos, recuperamos y mantenemos piletas en Bahía Blanca y la zona. Vos disfrutá, nosotros hacemos el resto.</p>
           <div class="hero__actions" data-rise style="--i:2">
             <a class="btn btn--primary btn--big" href="#pedir"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Pedir visita por WhatsApp</a>
@@ -67,13 +68,15 @@
         <div class="hero__art">
           <div class="hero__back" aria-hidden="true"></div>
           <figure class="hero__photo frame" data-shutter>
-            <img src="assets/img/hero-escalera.jpg" width="1304" height="2318" alt="Escalera de una pileta con el agua cristalina y los reflejos del sol en el fondo" fetchpriority="high">
+            <img src="assets/img/trabajo-dic25-despues.webp" width="1440" height="1919" alt="Después: pileta con agua turquesa y limpia, lista para usar" fetchpriority="high">
           </figure>
+          <span class="hand hand--after" aria-hidden="true">¡Después!</span>
+          <figure class="hero__before">
+            <img src="assets/img/trabajo-dic25-antes.webp" width="1440" height="1920" alt="Antes: la misma pileta con el agua verde">
+            <figcaption class="hand">Antes</figcaption>
+          </figure>
+          <svg class="hero__arrow" viewBox="0 0 160 120" aria-hidden="true"><path d="M14 104C30 52 70 26 140 22"/><path d="M122 10l20 12-16 16"/></svg>
           <p class="badge" aria-hidden="true"><span>Primera visita</span><strong>sin cargo</strong></p>
-          <figure class="hero__msg bubble">
-            <blockquote><p>impecable! excelente trabajo! muchas gracias!!</p></blockquote>
-            <figcaption>Un cliente, por WhatsApp</figcaption>
-          </figure>
         </div>
       </div>
     </section>
@@ -84,7 +87,6 @@
       <div class="services__inner">
         <div class="section-head">
           <h2 class="h2" id="services-title" data-reveal>Servicios que ofrecemos</h2>
-          <p data-reveal>Somos un equipo de Bahía Blanca que limpia, recupera y mantiene piletas todo el año, también en invierno.</p>
         </div>
 
         <article class="diag" data-reveal aria-labelledby="diag-title">

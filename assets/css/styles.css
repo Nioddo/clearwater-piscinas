@@ -17,6 +17,7 @@
 
   --serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --sans: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --hand: "Caveat", "Segoe Print", cursive;
 
   --t-hero: clamp(2.9rem, 1.1rem + 5.4vw, 6rem);
   --t-h2: clamp(2.25rem, 1.3rem + 3vw, 3.9rem);
@@ -39,6 +40,7 @@
   --t-hover: 180ms;
   --t-ui: 260ms;
 
+  --wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 16'%3E%3Cpath d='M3 10c12-8 22-8 34 0s22 8 34 0 22-8 34 0 10 4 12 2' fill='none' stroke='%23000' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E");
   /* Venecita: la franja de mosaico de la línea de agua */
   --mosaic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='32'%3E%3Cg%3E%3Crect x='1' y='1' width='14' height='14' rx='2' fill='%23057591'/%3E%3Crect x='17' y='1' width='14' height='14' rx='2' fill='%2346AEBB'/%3E%3Crect x='33' y='1' width='14' height='14' rx='2' fill='%23B3DBE0'/%3E%3Crect x='49' y='1' width='14' height='14' rx='2' fill='%23054D77'/%3E%3Crect x='65' y='1' width='14' height='14' rx='2' fill='%2346AEBB'/%3E%3Crect x='81' y='1' width='14' height='14' rx='2' fill='%23FFFFFF'/%3E%3Crect x='1' y='17' width='14' height='14' rx='2' fill='%23B3DBE0'/%3E%3Crect x='17' y='17' width='14' height='14' rx='2' fill='%23054D77'/%3E%3Crect x='33' y='17' width='14' height='14' rx='2' fill='%23FFFFFF'/%3E%3Crect x='49' y='17' width='14' height='14' rx='2' fill='%2346AEBB'/%3E%3Crect x='65' y='17' width='14' height='14' rx='2' fill='%23057591'/%3E%3Crect x='81' y='17' width='14' height='14' rx='2' fill='%23B3DBE0'/%3E%3C/g%3E%3C/svg%3E");
 }
@@ -70,6 +72,10 @@ strong { font-weight: 600; }
 .ico { width: 1.15em; height: 1.15em; flex: none; }
 
 .h2 { font-family: var(--serif); font-weight: 800; font-size: var(--t-h2); line-height: 1.04; letter-spacing: -0.015em; text-wrap: balance; }
+.h2::after {
+  content: ""; display: block; width: 1.9em; height: 0.24em; margin-top: 0.22em; background: var(--turq);
+  -webkit-mask: var(--wave) center / 100% 100% no-repeat; mask: var(--wave) center / 100% 100% no-repeat;
+}
 
 /* Fotos: rectángulo redondeado tradicional */
 .frame { overflow: hidden; border-radius: var(--rf); background: var(--sky); }
@@ -85,19 +91,29 @@ strong { font-weight: 600; }
   background: var(--navy); color: var(--white);
   font-weight: 600; font-size: var(--t-body); line-height: 1.1; text-decoration: none; white-space: nowrap;
   user-select: none; touch-action: manipulation;
-  transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) ease, color var(--t-hover) ease;
+  position: relative; overflow: hidden; isolation: isolate; --fill: var(--deep);
+  transition: transform var(--t-press) var(--ease-out), color var(--t-hover) ease;
 }
+/* La ola: sube desde abajo con el borde redondeado como una cresta */
+.btn::before {
+  content: ""; position: absolute; z-index: -1; left: -10%; right: -10%; top: 0; bottom: -40%;
+  border-radius: 45% 55% 0 0 / 22px 26px 0 0; background: var(--fill);
+  transform: translateY(105%); transition: transform 460ms var(--ease-out);
+}
+.btn .ico { transition: transform 360ms var(--ease-out); }
+.ripple { position: absolute; z-index: -1; width: 24px; height: 24px; margin: -12px 0 0 -12px; border-radius: 50%; background: currentColor; opacity: 0.28; pointer-events: none; animation: ripple 620ms var(--ease-out) forwards; }
+@keyframes ripple { from { transform: scale(0.4); } to { transform: scale(14); opacity: 0; } }
 .btn:active { transform: scale(0.97); }
 .btn--primary, .btn--wa { background: var(--petrol); color: var(--white); }
-.btn--ghost { background: transparent; color: var(--navy); border: 2px solid var(--navy); }
-.btn--light { background: var(--cream); color: var(--navy); }
+.btn--ghost { background: transparent; color: var(--navy); border: 2px solid var(--navy); --fill: var(--navy); }
+.btn--light { background: var(--cream); color: var(--navy); --fill: var(--sky); }
 .btn--small { min-height: 46px; padding: 0 20px; }
 .btn--big { min-height: 58px; padding: 0 30px; }
 .btn--full { width: 100%; }
 @media (hover: hover) and (pointer: fine) {
-  .btn--primary:hover, .btn--wa:hover { background: var(--deep); }
-  .btn--ghost:hover { background: var(--navy); color: var(--white); }
-  .btn--light:hover { background: var(--sky); }
+  .btn:hover::before { transform: translateY(0); }
+  .btn:hover .ico { transform: rotate(-14deg) scale(1.12); }
+  .btn--ghost:hover { color: var(--white); }
 }
 
 /* ---------- Barra ---------- */
@@ -128,26 +144,39 @@ strong { font-weight: 600; }
   padding: clamp(24px, 3vw, 40px) var(--m) clamp(40px, 5vw, 72px);
 }
 .hero__title { font-family: var(--serif); font-weight: 800; font-size: var(--t-hero); line-height: 1.02; letter-spacing: -0.02em; color: var(--navy); }
+.scribble { position: relative; display: inline-block; white-space: nowrap; }
+.scribble svg { position: absolute; left: -2%; right: -2%; bottom: -0.12em; width: 104%; height: 0.26em; overflow: visible; }
+.scribble path { fill: none; stroke: var(--turq); stroke-width: 7; stroke-linecap: round; }
 .hero__lead { margin-top: 26px; max-width: 34ch; font-size: var(--t-h3); line-height: 1.6; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
 .hero__facts { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 34px; font-size: var(--t-small); font-weight: 500; }
 .hero__facts li { display: inline-flex; align-items: center; gap: 8px; }
 .hero__facts .ico { width: 24px; height: 24px; padding: 4px; border-radius: 50%; background: var(--turq); color: var(--night); }
 
-.hero__art { position: relative; justify-self: end; width: min(100%, 520px); padding: 0 0 28px 28px; }
+.hero__art { position: relative; justify-self: end; width: min(100%, 500px); padding: 0 0 28px 28px; margin-top: 30px; }
 .hero__photo { aspect-ratio: 4 / 5; position: relative; z-index: 1; max-height: 70svh; }
 .hero__photo img { object-position: 50% 62%; }
 .hero__back { position: absolute; left: 0; bottom: 0; width: calc(100% - 28px); aspect-ratio: 4 / 5; max-height: 70svh; background: var(--turq); border-radius: var(--rf); }
 .badge {
-  position: absolute; z-index: 2; left: -10px; top: 18%;
+  position: absolute; z-index: 4; right: -22px; top: 14%;
   width: 132px; height: 132px; border-radius: 50%;
   display: grid; place-content: center; text-align: center;
   background: var(--navy); color: var(--white);
-  font-size: var(--t-small); line-height: 1.2; rotate: -10deg;
+  font-size: var(--t-small); line-height: 1.2; rotate: 10deg;
 }
 .badge strong { font-family: var(--serif); font-size: var(--t-h3); font-weight: 800; }
-.hero__msg { position: absolute; z-index: 2; right: -18px; bottom: 16%; width: min(260px, 70%); rotate: 2deg; }
-.hero__msg figcaption { font-size: var(--t-small); color: var(--hint); }
+.hero__before {
+  position: absolute; z-index: 3; left: -64px; bottom: 6%; width: 42%;
+  padding: 10px 10px 0; background: var(--white); border-radius: 6px; rotate: -7deg;
+}
+.hero__before img { aspect-ratio: 1; object-fit: cover; border-radius: 3px; }
+.hand { font-family: var(--hand); font-weight: 700; font-size: 2rem; line-height: 1; color: var(--navy); }
+.hero__before .hand { display: block; text-align: center; padding: 6px 0 8px; }
+.hand--after { position: absolute; z-index: 3; right: 18px; top: -40px; rotate: -4deg; color: var(--petrol); font-size: 2.4rem; }
+.hero__arrow { position: absolute; z-index: 3; left: 4%; bottom: 46%; width: 34%; overflow: visible; }
+.hero__arrow path { fill: none; stroke: var(--navy); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.bubbles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.bubbles i { position: absolute; left: var(--x); bottom: -40px; width: var(--s); height: var(--s); border-radius: 50%; border: 2px solid var(--turq); opacity: 0; }
 
 /* ---------- Servicios que ofrecemos ---------- */
 .services { background: var(--sky-2); }
@@ -166,7 +195,8 @@ strong { font-weight: 600; }
 .diag__note { font-weight: 600; color: var(--sky); }
 .svc-list { display: grid; grid-template-columns: 1fr 1fr; gap: 28px clamp(28px, 4vw, 56px); }
 .svc { display: grid; grid-template-columns: 132px 1fr; gap: 20px; align-items: center; }
-.svc img { width: 132px; aspect-ratio: 1; object-fit: cover; border-radius: var(--rc); }
+.svc img { width: 132px; aspect-ratio: 1; object-fit: cover; border-radius: var(--rc); transition: rotate 420ms var(--ease-out), scale 420ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .svc:hover img { rotate: -4deg; scale: 1.05; } }
 .svc h3 { font-family: var(--serif); font-weight: 700; font-size: var(--t-h3); line-height: 1.25; margin-bottom: 4px; }
 .svc p { font-size: var(--t-small); line-height: 1.55; }
 
@@ -231,10 +261,6 @@ strong { font-weight: 600; }
 .tag--after { right: 22px; rotate: 4deg; }
 .compare__range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; pointer-events: none; -webkit-appearance: none; appearance: none; }
 .compare:has(.compare__range:focus-visible) { outline: 3px solid var(--cream); outline-offset: 4px; }
-
-/* ---------- Burbuja de WhatsApp (portada) ---------- */
-.bubble { display: grid; gap: 4px; padding: 14px 18px 10px; border-radius: var(--rc) var(--rc) var(--rc) 4px; background: var(--white); color: var(--night); }
-.bubble p { line-height: 1.45; }
 
 /* ---------- Zonas ---------- */
 .zones { background: var(--sky-2); }
@@ -355,6 +381,7 @@ strong { font-weight: 600; }
   .bar__nav { display: none; }
   .hero__inner { grid-template-columns: 1fr; min-height: 0; gap: 44px; }
   .hero__art { justify-self: center; width: min(100%, 460px); }
+  .hand--after { display: none; }
   .work__inner, .zones__inner, .order__inner, .svc-list { grid-template-columns: 1fr; }
   .section-head { grid-template-columns: 1fr; }
   .section-head p { justify-self: start; }
@@ -373,7 +400,10 @@ strong { font-weight: 600; }
   .diag img { max-height: 220px; min-height: 0; aspect-ratio: 16 / 9; }
   .svc { grid-template-columns: 96px 1fr; gap: 16px; }
   .svc img { width: 96px; }
-  .hero__msg { right: -4px; bottom: 10%; }
+  .hero__before { left: -6px; width: 40%; padding: 7px 7px 0; }
+  .hand { font-size: 1.5rem; }
+  .hand--after { font-size: 1.9rem; top: -34px; right: 8px; }
+  .badge { right: -6px; }
   .swirl path { stroke-width: 34; }
   .hero__lead { margin-top: 18px; }
   .hero__actions { margin-top: 28px; }
@@ -408,7 +438,18 @@ strong { font-weight: 600; }
   .js .hero__back { opacity: 0; transform: translate(18px, -18px); animation: back 900ms var(--ease-out) 700ms forwards; }
   @keyframes back { to { opacity: 1; transform: none; } }
   .js .badge { opacity: 0; scale: 0.8; animation: pop 600ms var(--ease-out) 1200ms forwards; }
-  .js .hero__msg { opacity: 0; scale: 0.92; transform-origin: 0 100%; animation: pop 600ms var(--ease-out) 1600ms forwards; }
+  .js .hero__before { opacity: 0; translate: -30px 30px; rotate: -16deg; animation: drop 900ms var(--ease-out) 900ms forwards; }
+  @keyframes drop { to { opacity: 1; translate: 0 0; rotate: -7deg; } }
+  .js .hero__arrow path { stroke-dasharray: 240; stroke-dashoffset: 240; animation: draw 700ms var(--ease-out) 1500ms forwards; }
+  .js .hero__arrow path + path { animation-delay: 2100ms; }
+  .js .hand--after { opacity: 0; scale: 0.7; animation: pop 500ms var(--ease-out) 2200ms forwards; }
+  .js .scribble path { stroke-dasharray: 400; stroke-dashoffset: 400; animation: draw 900ms var(--ease-out) 700ms forwards; }
+  .bubbles i { animation: bubble var(--t) linear var(--d) infinite; }
+  @keyframes bubble { 0% { opacity: 0; transform: translate(0, 0); } 12% { opacity: 0.7; } 50% { transform: translate(14px, -45vh); } 90% { opacity: 0.4; } 100% { opacity: 0; transform: translate(-10px, -92vh); } }
+  .mosaic { animation: tiles 40s linear infinite; }
+  @keyframes tiles { to { background-position-x: 960px; } }
+  .js .h2[data-reveal]::after { clip-path: inset(0 100% 0 0); transition: clip-path 900ms var(--ease-out) 350ms; }
+  .js .h2[data-reveal].is-in::after { clip-path: inset(0 0 0 0); }
   @keyframes pop { 60% { opacity: 1; scale: 1.04; } to { opacity: 1; scale: 1; } }
   .hero__photo img { animation: drift 16s ease-in-out 2.4s infinite alternate; }
   @keyframes drift { from { translate: 0 0; } to { translate: 0 -2.5%; } }
