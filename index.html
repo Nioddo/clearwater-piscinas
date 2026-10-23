@@ -28,6 +28,7 @@
     <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5.5-8 12-8 12s-8-6.5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></g></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></g></symbol>
     <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></g></symbol>
   </svg>
 
@@ -102,19 +103,23 @@
         <ul class="svc-list" role="list">
           <li class="svc" data-reveal style="--d:0ms">
             <img src="assets/img/servicio-verde.webp" width="1440" height="1920" alt="Pileta con el agua verde antes de recuperarla" loading="lazy">
-            <div><h3>Recuperación de piletas verdes</h3><p>Agua verde, turbia o negra: tratamiento de choque, aspirado, cepillado y filtrado hasta dejarla cristalina.</p></div>
+            <span class="svc__tiles" aria-hidden="true"></span>
+            <div class="svc__body"><h3>Recuperación de piletas verdes</h3><p>Agua verde, turbia o negra: tratamiento de choque, aspirado, cepillado y filtrado hasta dejarla cristalina.</p><a class="svc__link" href="#pedir" data-pick="recuperarla">Pedir este servicio<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
           </li>
           <li class="svc" data-reveal style="--d:80ms">
             <img src="assets/img/servicio-mantenimiento.webp" width="1080" height="1080" alt="Pileta limpia de agua celeste en un jardín" loading="lazy">
-            <div><h3>Mantenimiento mensual</h3><p>Una o dos visitas por mes: cloro y pH, aspirado, skimmer y prefiltro. En otoño recomendamos dos.</p></div>
+            <span class="svc__tiles" aria-hidden="true"></span>
+            <div class="svc__body"><h3>Mantenimiento mensual</h3><p>Una o dos visitas por mes: cloro y pH, aspirado, skimmer y prefiltro. En otoño recomendamos dos.</p><a class="svc__link" href="#pedir" data-pick="mantenimiento">Pedir este servicio<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
           </li>
           <li class="svc" data-reveal style="--d:160ms">
             <img src="assets/img/servicio-limpieza.jpg" width="1350" height="1128" alt="Sacahojas, barrefondo, cepillo y manguera al borde de una pileta" loading="lazy">
-            <div><h3>Limpieza y puesta a punto</h3><p>Antes del verano dejamos paredes, fondo y equipo listos para el primer día de calor.</p></div>
+            <span class="svc__tiles" aria-hidden="true"></span>
+            <div class="svc__body"><h3>Limpieza y puesta a punto</h3><p>Antes del verano dejamos paredes, fondo y equipo listos para el primer día de calor.</p><a class="svc__link" href="#pedir" data-pick="puesta a punto">Pedir este servicio<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
           </li>
           <li class="svc" data-reveal style="--d:240ms">
             <img src="assets/img/trabajo-dic25-equipo.webp" width="1440" height="1920" alt="Equipo de filtrado nuevo con bomba, filtro y válvulas" loading="lazy">
-            <div><h3>Filtro, bomba y circuito</h3><p>Revisamos bomba, filtro, válvulas y caños. Si algo falla, te decimos qué conviene cambiar.</p></div>
+            <span class="svc__tiles" aria-hidden="true"></span>
+            <div class="svc__body"><h3>Filtro, bomba y circuito</h3><p>Revisamos bomba, filtro, válvulas y caños. Si algo falla, te decimos qué conviene cambiar.</p><a class="svc__link" href="#pedir" data-pick="equipo">Pedir este servicio<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
           </li>
         </ul>
       </div>
@@ -122,6 +127,7 @@
 
     <!-- Trabajos -->
     <section class="work" id="trabajos" aria-labelledby="work-title">
+      <div class="bubbles" aria-hidden="true"><i style="--x:6%;--s:14px;--t:11s;--d:0s"></i><i style="--x:18%;--s:8px;--t:9s;--d:3s"></i><i style="--x:34%;--s:18px;--t:13s;--d:6s"></i><i style="--x:47%;--s:10px;--t:10s;--d:1.5s"></i><i style="--x:58%;--s:6px;--t:8s;--d:4.5s"></i><i style="--x:71%;--s:16px;--t:12s;--d:2s"></i><i style="--x:84%;--s:9px;--t:9.5s;--d:7s"></i><i style="--x:93%;--s:12px;--t:11.5s;--d:5s"></i></div>
       <div class="work__inner">
         <div class="work__copy">
           <h2 class="h2" id="work-title" data-reveal>Antes y después</h2>
@@ -206,10 +212,10 @@
           <fieldset class="field">
             <legend>¿Cómo está el agua?</legend>
             <div class="swatches">
-              <label class="swatch"><input type="radio" name="agua" value="cristalina"><span class="swatch__img"><img src="assets/img/trabajo-sep26-despues.jpg" alt="" width="64" height="64" loading="lazy"></span><span>Cristalina</span></label>
-              <label class="swatch"><input type="radio" name="agua" value="turbia"><span class="swatch__img"><img src="assets/img/agua-turbia.webp" alt="" width="64" height="64" loading="lazy"></span><span>Turbia</span></label>
-              <label class="swatch"><input type="radio" name="agua" value="verde" checked><span class="swatch__img"><img src="assets/img/trabajo-dic25-antes.webp" alt="" width="64" height="64" loading="lazy"></span><span>Verde</span></label>
-              <label class="swatch"><input type="radio" name="agua" value="negra"><span class="swatch__img"><img src="assets/img/trabajo-sep26-antes.jpg" alt="" width="64" height="64" loading="lazy"></span><span>Negra</span></label>
+              <label class="swatch"><input type="radio" name="agua" value="cristalina"><span class="swatch__img"><img src="assets/img/trabajo-sep26-despues.jpg" alt="" width="64" height="64" loading="lazy"></span><span class="swatch__tick" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span>Cristalina</span></label>
+              <label class="swatch"><input type="radio" name="agua" value="turbia"><span class="swatch__img"><img src="assets/img/agua-turbia.webp" alt="" width="64" height="64" loading="lazy"></span><span class="swatch__tick" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span>Turbia</span></label>
+              <label class="swatch"><input type="radio" name="agua" value="verde" checked><span class="swatch__img"><img src="assets/img/trabajo-dic25-antes.webp" alt="" width="64" height="64" loading="lazy"></span><span class="swatch__tick" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span>Verde</span></label>
+              <label class="swatch"><input type="radio" name="agua" value="negra"><span class="swatch__img"><img src="assets/img/trabajo-sep26-antes.jpg" alt="" width="64" height="64" loading="lazy"></span><span class="swatch__tick" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span>Negra</span></label>
             </div>
           </fieldset>
 
@@ -227,11 +233,11 @@
           <div class="field field--row">
             <label class="input">
               <span>Barrio o localidad</span>
-              <input type="text" name="zona" list="zonas-lista" autocomplete="address-level2" placeholder="Ej.: Palihue" spellcheck="false">
+              <span class="input__field"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><input type="text" name="zona" list="zonas-lista" autocomplete="address-level2" placeholder="Ej.: Palihue" spellcheck="false"></span>
             </label>
             <label class="input">
               <span>Tu nombre <em>(opcional)</em></span>
-              <input type="text" name="nombre" autocomplete="given-name" placeholder="Ej.: Laura">
+              <span class="input__field"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg><input type="text" name="nombre" autocomplete="given-name" placeholder="Ej.: Laura"></span>
             </label>
             <datalist id="zonas-lista">
               <option value="Centro"><option value="Palihue"><option value="Patagonia"><option value="Universitario"><option value="Villa Mitre"><option value="Bella Vista"><option value="Napostá"><option value="Villa Floresta"><option value="Aldea Romana"><option value="Los Almendros"><option value="Santa Margarita"><option value="Tiro Federal"><option value="Ingeniero White"><option value="General Daniel Cerri"><option value="Grünbein"><option value="Villa Bordeu"><option value="Punta Alta">
@@ -239,8 +245,8 @@
           </div>
 
           <div class="preview" aria-live="polite">
-            <p class="preview__label">Así llega tu mensaje</p>
-            <p class="preview__text" id="orden-mensaje">Hola ClearWater! Mi pileta está verde y quiero recuperarla. ¿Cuándo pueden venir a verla?</p>
+            <p class="preview__label"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Así llega tu mensaje</p>
+            <div class="preview__bubble"><p class="preview__text" id="orden-mensaje">Hola ClearWater! Mi pileta está verde y quiero recuperarla. ¿Cuándo pueden venir a verla?</p><span class="preview__meta">ahora <svg class="ticks" viewBox="0 0 20 12" aria-hidden="true"><path d="M1 6.5l3.5 3.5L11 2.5M8 9.5l.5.5L16 2.5"/></svg></span></div>
           </div>
 
           <a class="btn btn--wa btn--big btn--full" id="orden-enviar" href="https://wa.me/5492910000000?text=Hola%20ClearWater!%20Quiero%20pedir%20una%20visita%20para%20mi%20pileta." target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Enviar por WhatsApp</a>
@@ -251,7 +257,7 @@
 
   <footer class="foot">
     <a class="foot__band" data-wa="Hola ClearWater! Quiero pedir una visita para mi pileta." href="https://wa.me/5492910000000" target="_blank" rel="noopener">
-      <span class="foot__band-text">Escribinos</span>
+      <span class="foot__band-text scribble">Escribinos<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 16c30-10 54-10 80-2s50 8 76-2 52-10 78-2 40 6 58 0"/></svg></span>
       <span class="foot__band-cta"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp 291 000-0000</span>
     </a>
     <div class="mosaic mosaic--dark" aria-hidden="true"></div>

@@ -28,7 +28,7 @@ if (!reduceMotion) {
 }
 
 /* ---------- Entradas al aparecer (una sola vez) ---------- */
-const revealables = document.querySelectorAll('[data-reveal]');
+const revealables = document.querySelectorAll('[data-reveal], .foot__band');
 if (hasIO) {
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) {
@@ -217,6 +217,11 @@ if (form) {
     update();
   });
   form.addEventListener('input', update);
+  // "Pedir este servicio" en cada tarjeta deja elegido ese servicio en la ficha.
+  document.querySelectorAll('[data-pick]').forEach((a) => a.addEventListener('click', () => {
+    const r = form.querySelector(`input[name="servicio"][value="${a.dataset.pick}"]`);
+    if (r) { r.checked = true; update(); }
+  }));
   form.addEventListener('submit', (e) => { e.preventDefault(); send.click(); });
   update();
 }
@@ -260,7 +265,7 @@ const initMap = () => {
     [-38.705, -62.335], [-38.685, -62.330],
   ];
   L.circle([-38.735, -62.215], { radius: 27000, stroke: false, fillColor: turq, fillOpacity: 0.22, interactive: false }).addTo(map);
-  L.polygon(city, { color: petrol, weight: 3, fillColor: petrol, fillOpacity: 0.32, interactive: false })
+  L.polygon(city, { color: petrol, weight: 3, fillColor: petrol, fillOpacity: 0.32, interactive: false, className: 'city-poly' })
     .addTo(map).bindTooltip('Bahía Blanca', { permanent: true, direction: 'center', className: 'city-label' });
 
   const towns = [
