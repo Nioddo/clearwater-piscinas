@@ -13,7 +13,7 @@ addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
 /* ---------- Entradas al aparecer (una sola vez) ---------- */
-const revealables = document.querySelectorAll('[data-reveal], [data-pop], .voices');
+const revealables = document.querySelectorAll('[data-reveal], [data-pop]');
 if (hasIO) {
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) {
@@ -35,37 +35,6 @@ function pressGroup(list, onSelect) {
     items.forEach((b) => { const on = b === btn; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', String(on)); });
     onSelect(btn, i);
   }));
-}
-
-// Cambio de imagen con un fundido corto; la nueva se precarga antes de mostrarse.
-function swapImage(holder, img, src, alt) {
-  if (reduceMotion) { img.src = src; img.alt = alt; return; }
-  holder.classList.add('is-swapping');
-  const pre = new Image();
-  pre.src = src;
-  Promise.all([pre.decode().catch(() => {}), new Promise((r) => setTimeout(r, 220))]).then(() => {
-    img.src = src; img.alt = alt;
-    requestAnimationFrame(() => holder.classList.remove('is-swapping'));
-  });
-}
-
-/* ---------- Servicios: acordeón, siempre uno abierto; la foto grande acompaña ---------- */
-const services = document.querySelector('[data-services]');
-if (services) {
-  const panel = services.querySelector('.services__photo');
-  const photo = panel.querySelector('img');
-  const rows = [...services.querySelectorAll('.service')];
-  rows.forEach((row) => {
-    row.querySelector('.service__btn').addEventListener('click', () => {
-      if (row.classList.contains('is-on')) return;
-      rows.forEach((r) => {
-        const on = r === row;
-        r.classList.toggle('is-on', on);
-        r.querySelector('.service__btn').setAttribute('aria-expanded', String(on));
-      });
-      swapImage(panel, photo, row.dataset.img, '');
-    });
-  });
 }
 
 /* ---------- Comparador antes / después ---------- */
@@ -206,7 +175,7 @@ if (form) {
     mantenimiento: 'me interesa el mantenimiento mensual',
     'puesta a punto': 'quiero ponerla a punto para la temporada',
     equipo: 'necesito que revisen el filtro y la bomba',
-    'no sé': 'quiero que alguien la vea',
+    'diagnóstico': 'quiero que la revisen y me digan qué necesita',
   };
   const compose = () => {
     const d = new FormData(form);
